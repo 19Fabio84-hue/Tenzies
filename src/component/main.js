@@ -54,8 +54,10 @@ export default function Main(){
              return held.id === id ? {...held ,isHeld : !held.isHeld } : held})
             )
      }
-    const elementDice = dice.map(pervDice => <Die toggle={() =>holdDice(pervDice.id)}  isHeld={pervDice.isHeld} key={pervDice.id}
-                                                  class={rollDice ? 'rolling-animation die' : 'die'} rolling={rollDice} value={pervDice.value} />)
+    const elementDice = dice.map(pervDice =>
+          <Die toggle={() =>holdDice(pervDice.id)}  isHeld={pervDice.isHeld} key={pervDice.id}
+               rolling={rollDice} value={pervDice.value} />
+                                                  )
     return(
         <main>
             <h1 className="title">Tenzies</h1>
